@@ -1,4 +1,4 @@
-const videos = (state = [], action) => {
+const videosReducer = (state = [], action) => {
     switch (action.type) {
         case 'FETCH_VIDEOS':
             debugger
@@ -12,4 +12,4 @@ const videos = (state = [], action) => {
     }
 }
 
-export default videos
+export default videosReducer
