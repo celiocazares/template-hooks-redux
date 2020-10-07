@@ -1,10 +1,8 @@
-import rootReducer from './reducers';
-
-import { combineReducers } from 'redux'
-import videosReducer from './reducers/videosReducer'
+import { combineReducers, createStore } from 'redux'
+import usersReducer from './reducers/usersReducer'
 
 const reducers = combineReducers({
-  videosReducer
+  usersReducer
 })
 
 const store = createStore(reducers)

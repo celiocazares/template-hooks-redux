@@ -1,16 +1,20 @@
 import React from 'react';
 import './App.css';
-import Videos from './Pages/videos'
+import Users from './Pages/users/users'
+
+// redux
+import { Provider } from 'react-redux';
+
+import store from './store'
+
 
 function App() {
   return (
-    <div className="App">
-      {/* <header className="App-header">
-        hello
-
-      </header> */}
-      <Videos />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <Users />
+      </div>
+    </Provider>
   );
 }
 
