@@ -11,7 +11,7 @@ function getAll() {
         method: 'GET',
         headers: apiHelpers.authHeader()
     };
-    return fetch(prefixApi() + '/users', requestOptions).then(response => response.json());
+    return fetch(prefixApi() + '/user', requestOptions).then(response => response.json());
 }
 
 function add(params) {
@@ -20,5 +20,5 @@ function add(params) {
 		headers: { ...apiHelpers.authHeader(), 'Content-Type': 'application/json' },
 		body: JSON.stringify(params)
 	};
-	return fetch(prefixApi() + '/users', requestOptions).then(response => response.json());
+	return fetch(prefixApi() + '/user', requestOptions).then(response => response.json());
 }
