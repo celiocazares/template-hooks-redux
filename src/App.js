@@ -6,13 +6,15 @@ import Users from './Pages/users/users'
 import { Provider } from 'react-redux';
 
 import store from './store'
+import Login from './Pages/users/login';
 
 
 function App() {
   return (
     <Provider store={store}>
       <div className="App">
-        <Users />
+        {/* <Users /> */}
+        <Login />
       </div>
     </Provider>
   );

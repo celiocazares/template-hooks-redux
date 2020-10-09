@@ -7,7 +7,7 @@ const fetchUsers = () => {
     usersHandler.getAll()
       .then(
         users => dispatch(success(users)),
-        error => { console.log(error) }
+        error => apiHelpers.handleError(error)
       ).catch(error => {
         dispatch(failure(error));
       });
