@@ -1,5 +1,6 @@
 import { usersActionTypes } from "../actionTypes/usersActionTypes";
 import { usersHandler } from "../handlers/usersHandler";
+import { apiHelpers } from "../helpers/apiHelpers";
 
 const fetchUsers = () => {
   return dispatch => {
