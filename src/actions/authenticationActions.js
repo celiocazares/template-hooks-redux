@@ -2,7 +2,7 @@ import { authenticationTypes } from "../actionTypes/authenticationTypes";
 import { authenticationHandler } from "../handlers/authenticationHandler";
 import { apiHelpers } from "../helpers/apiHelpers";
 
-const login = (params) => {
+const login = (params, callback) => {
 	return dispatch => {
 		dispatch(request());
 		authenticationHandler.login(params)
@@ -10,6 +10,7 @@ const login = (params) => {
 				users => {
 					apiHelpers.handleLogin(users)
 					dispatch(success(users))
+					if (callback) callback()
 				},
 				error => apiHelpers.handleError(error)
 			).catch(error => {

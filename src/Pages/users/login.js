@@ -1,20 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from 'react';
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { authenticationActions } from "../../actions/authenticationActions"
 
 const Login = () => {
   const [userName, setUser] = useState('');
   const [userPassword, setPassword] = useState('');
   const dispatch = useDispatch();
+  const history = useHistory()
 
-  // useState()
+  const loginCallBack = (response) => {
+    history.push('/users')
+  }
 
   const login = () => {
     const params = {
       username: userName,
       password: userPassword
     }
-    dispatch(authenticationActions.login(params))
+    dispatch(authenticationActions.login(params, loginCallBack))
   }
 
   console.log('userName', userName)

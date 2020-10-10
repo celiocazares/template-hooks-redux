@@ -1,22 +1,29 @@
 import React from 'react';
 import './App.css';
 import Users from './Pages/users/users'
-
-// redux
-import { Provider } from 'react-redux';
-
-import store from './store'
 import Login from './Pages/users/login';
+
+import { Switch, Route } from 'react-router-dom';
+import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 
 
 function App() {
-  return (
-    <Provider store={store}>
-      <div className="App">
-        {/* <Users /> */}
-        <Login />
+  let location = useLocation();
+
+  if (location.pathname === '/login') {
+    return (
+      <div className="login">
+        <Route path="/login" component={Login} />
       </div>
-    </Provider>
+    )
+  }
+
+  return (
+    <div className="App">
+      <Switch>
+        <Route path="/users" component={Users} />
+      </Switch>
+    </div>
   );
 }
 

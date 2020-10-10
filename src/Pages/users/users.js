@@ -8,9 +8,9 @@ const Users = () => {
 
     const { usersList } = usersReducer
 
-    useEffect(() => {
-        dispatch(usersActions.fetchUsers())
-    }, []);
+    // useEffect(() => {
+    //     dispatch(usersActions.fetchUsers())
+    // }, []);
 
     return (
         <>
